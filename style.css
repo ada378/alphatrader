@@ -67,9 +67,9 @@ html {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
 }
 
 .footer-logo {
@@ -415,6 +415,62 @@ html {
 }
 
 /* ===================================
+   FLOATING WHATSAPP BUTTON
+   =================================== */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Footer Contact Links */
+.footer-contact {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: var(--accent-cyan);
+}
+
+.contact-link svg {
+  flex-shrink: 0;
+}
+
+/* ===================================
    RESPONSIVE DESIGN
    =================================== */
 @media (max-width: 768px) {
@@ -477,5 +533,27 @@ html {
   .cta-btn {
     padding: 14px 32px;
     font-size: 1rem;
+  }
+
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-whatsapp svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 12px;
   }
 }
