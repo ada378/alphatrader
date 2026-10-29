@@ -66,7 +66,13 @@ html {
   font-weight: 700;
 }
 
-.logo, .footer-logo {
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.footer-logo {
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -87,6 +93,30 @@ html {
 
 .nav-menu a:hover {
   color: var(--accent-cyan);
+}
+
+/* Telegram Button in Header */
+.telegram-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient);
+  color: var(--text-white);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.telegram-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+}
+
+.telegram-btn svg {
+  flex-shrink: 0;
 }
 
 /* ===================================
@@ -130,7 +160,9 @@ html {
 }
 
 .cta-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: var(--gradient);
   color: var(--text-white);
   padding: 16px 40px;
@@ -141,9 +173,30 @@ html {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.cta-btn svg {
+  flex-shrink: 0;
+}
+
 .cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+}
+
+.cta-btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.cta-btn-secondary:hover {
+  background: rgba(0, 217, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+}
+
+.cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .hero-image {
@@ -369,6 +422,15 @@ html {
     display: none;
   }
 
+  .telegram-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .telegram-btn span {
+    display: none;
+  }
+
   .hero-grid,
   .founder-card {
     grid-template-columns: 1fr;
@@ -391,6 +453,15 @@ html {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cta-group {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
