@@ -415,24 +415,43 @@ html {
 }
 
 /* ===================================
-   FLOATING WHATSAPP BUTTON
+   FLOATING CONTACT BUTTONS
    =================================== */
-.floating-whatsapp {
+.floating-buttons {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1000;
+}
+
+.floating-telegram,
+.floating-whatsapp {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
-  z-index: 1000;
   text-decoration: none;
+}
+
+.floating-telegram {
+  background: linear-gradient(135deg, #0088cc, #229ED9);
+}
+
+.floating-telegram:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(34, 158, 217, 0.6);
+}
+
+.floating-whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
 .floating-whatsapp:hover {
@@ -440,6 +459,7 @@ html {
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
 }
 
+.floating-telegram svg,
 .floating-whatsapp svg {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
@@ -535,11 +555,21 @@ html {
     font-size: 1rem;
   }
 
+  .floating-buttons {
+    bottom: 20px;
+    right: 20px;
+    gap: 12px;
+  }
+
+  .floating-telegram,
   .floating-whatsapp {
     width: 50px;
     height: 50px;
-    bottom: 20px;
-    right: 20px;
+  }
+
+  .floating-telegram svg {
+    width: 24px;
+    height: 24px;
   }
 
   .floating-whatsapp svg {
