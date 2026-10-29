@@ -15,9 +15,9 @@
   --bg-card: #111111;
   --text-white: #ffffff;
   --text-gray: #a0a0a0;
-  --accent-blue: #4f46e5;
-  --accent-purple: #7c3aed;
-  --gradient: linear-gradient(135deg, #4f46e5, #7c3aed);
+  --accent-cyan: #00d9ff;
+  --accent-green: #00ff88;
+  --gradient: linear-gradient(135deg, #00d9ff, #00ff88);
 }
 
 body {
@@ -86,7 +86,7 @@ html {
 }
 
 .nav-menu a:hover {
-  color: var(--accent-blue);
+  color: var(--accent-cyan);
 }
 
 /* ===================================
@@ -96,8 +96,8 @@ html {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(ellipse at top left, rgba(79, 70, 229, 0.15), transparent 50%),
-              radial-gradient(ellipse at bottom right, rgba(124, 58, 237, 0.15), transparent 50%);
+  background: radial-gradient(ellipse at top left, rgba(0, 217, 255, 0.15), transparent 50%),
+              radial-gradient(ellipse at bottom right, rgba(0, 255, 136, 0.15), transparent 50%);
   padding: 80px 0;
 }
 
@@ -143,7 +143,7 @@ html {
 
 .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
 }
 
 .hero-image {
@@ -156,7 +156,7 @@ html {
   width: 100%;
   max-width: 450px;
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 255, 136, 0.3);
 }
 
 /* ===================================
@@ -202,13 +202,23 @@ html {
 .founder-info h3 {
   font-size: 1.8rem;
   margin-bottom: 16px;
-  color: var(--accent-blue);
 }
 
 .founder-info p {
   color: var(--text-gray);
   line-height: 1.8;
   font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.founder-info strong {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.founder-info em {
+  color: var(--accent-green);
+  font-style: normal;
 }
 
 /* ===================================
@@ -229,7 +239,10 @@ html {
 .section-tagline {
   text-align: center;
   font-size: 1.25rem;
-  color: var(--accent-purple);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 60px;
   font-weight: 600;
 }
@@ -251,7 +264,8 @@ html {
 
 .service-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-blue);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 10px 40px rgba(0, 217, 255, 0.2);
 }
 
 .service-icon {
@@ -276,7 +290,7 @@ html {
    =================================== */
 .join {
   padding: 100px 0;
-  background: radial-gradient(ellipse at center, rgba(79, 70, 229, 0.2), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(0, 217, 255, 0.2), transparent 70%);
 }
 
 .join-content {
@@ -328,8 +342,8 @@ html {
 }
 
 .disclaimer {
-  background: rgba(79, 70, 229, 0.1);
-  border: 1px solid rgba(79, 70, 229, 0.3);
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 24px;
