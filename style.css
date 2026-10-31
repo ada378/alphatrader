@@ -278,15 +278,15 @@ html {
   color: white;
   position: relative;
   overflow: hidden;
-  animation: buttonPulse 2s ease-in-out infinite;
+  animation: buttonSlide 3s ease-in-out infinite;
 }
 
-@keyframes buttonPulse {
+@keyframes buttonSlide {
   0%, 100% {
-    transform: scale(1);
+    transform: translateX(-10px);
   }
   50% {
-    transform: scale(1.05);
+    transform: translateX(10px);
   }
 }
 
@@ -324,7 +324,7 @@ html {
 
 .whatsapp-btn {
   background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
-  animation-delay: 0.3s;
+  animation-delay: 1.5s;
 }
 
 .whatsapp-btn:hover {
