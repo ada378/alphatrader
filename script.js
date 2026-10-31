@@ -1,55 +1,42 @@
 /**
- * ALPHA TRADERS - SIMPLE INTERACTIVE SCRIPT
- * Smooth scrolling and basic interactivity
+ * ALPHA TRADERS - SIMPLE LANDING PAGE
+ * Basic tracking and smooth interactions
  */
 
 (function () {
   'use strict';
 
-  // Smooth scroll for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+  // Track button clicks for Meta Pixel
+  document.addEventListener('DOMContentLoaded', () => {
+    // Track Telegram clicks
+    const telegramLinks = document.querySelectorAll('a[href*="t.me"]');
+    telegramLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'Telegram Join' });
+        }
+      });
     });
-  });
 
-  // Add scroll animation for service cards
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+    // Track WhatsApp clicks
+    const whatsappLinks = document.querySelectorAll('a[href*="whatsapp.com"]');
+    whatsappLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'WhatsApp Join' });
+        }
+      });
     });
-  }, observerOptions);
 
-  // Observe service cards
-  document.querySelectorAll('.service-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-    observer.observe(card);
-  });
-
-  // Track Meta Pixel events
-  const ctaButtons = document.querySelectorAll('.cta-btn');
-  ctaButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead');
-      }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
   });
 
