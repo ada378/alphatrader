@@ -39,6 +39,52 @@ html {
 }
 
 /* ===================================
+   MARQUEE SECTION
+   =================================== */
+.marquee-container {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 136, 0.15));
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+  overflow: hidden;
+  padding: 12px 0;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 30px;
+  animation: marqueeScroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-content span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-white);
+  display: inline-block;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Blink Animation for all buttons */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px currentColor;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px currentColor;
+  }
+}
+
+/* ===================================
    HEADER
    =================================== */
 .header {
@@ -93,24 +139,29 @@ html {
   font-size: 0.95rem;
   color: white;
   transition: transform 0.3s, box-shadow 0.3s;
+  animation: buttonSlide 3s ease-in-out infinite, blink 2s ease-in-out infinite;
 }
 
 .telegram-header-btn {
   background: var(--telegram-blue);
+  animation-delay: 0s;
 }
 
 .telegram-header-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 136, 204, 0.4);
+  animation: none;
 }
 
 .whatsapp-header-btn {
   background: var(--whatsapp-green);
+  animation-delay: 1.5s;
 }
 
 .whatsapp-header-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  animation: none;
 }
 
 /* ===================================
@@ -278,7 +329,7 @@ html {
   color: white;
   position: relative;
   overflow: hidden;
-  animation: buttonSlide 3s ease-in-out infinite;
+  animation: buttonSlide 3s ease-in-out infinite, blink 2s ease-in-out infinite;
 }
 
 @keyframes buttonSlide {
@@ -439,6 +490,7 @@ html {
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+  animation: blink 2s ease-in-out infinite;
 }
 
 .telegram-floating {

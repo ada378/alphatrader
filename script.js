@@ -8,6 +8,13 @@
 
   // Track button clicks for Meta Pixel
   document.addEventListener('DOMContentLoaded', () => {
+    // Duplicate marquee content for seamless infinite scroll
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (marqueeContent) {
+      const originalContent = marqueeContent.innerHTML;
+      marqueeContent.innerHTML = originalContent + originalContent + originalContent;
+    }
+
     // Track Telegram clicks
     const telegramLinks = document.querySelectorAll('a[href*="t.me"]');
     telegramLinks.forEach(link => {
